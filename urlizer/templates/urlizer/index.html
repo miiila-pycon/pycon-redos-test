@@ -1,0 +1,11 @@
+{% if userInput %}
+  Result: <p> {{userInput | urlize}}</p>
+  <!-- <p> {{userInput | truncatewords_html:500}}</p> -->
+{% endif %}
+
+
+<form id='urlizer' method='POST'>
+  {% csrf_token %}
+  <textarea rows=40 cols=120 name='userInput'>Put an input to be urlized here.</textarea><br />
+  <button type="submit">Urlize!</button>
+</form>
